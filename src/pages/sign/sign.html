@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Sign In
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-list>
+<form [formGroup]="loginForm" (submit)="logForm()" novalidate>
+
+
+<ion-item>
+<ion-label floating>Email</ion-label>
+<ion-input #email formControlName="email" type="email" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>
+</ion-item>
+<ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
+<p>Please enter a valid email.</p>
+</ion-item>
+
+<ion-item>
+<ion-label floating>Password</ion-label>
+<ion-input #password formControlName="password" type="password"
+ [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+</ion-item>
+
+<button ion-button block type="submit">done</button>
+
+<button ion-button block clear (click)="goToResetPassword()">
+I forgot my password
+</button>
+
+</form>
+
+
+</ion-list>
+
+</ion-content>

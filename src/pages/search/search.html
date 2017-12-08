@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Search</ion-title>
+<ion-buttons end>
+    <button ion-button (click)="logOut()"> log out
+      <ion-icon name="log-out"></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="getItems($event)"
+    
+    ></ion-searchbar>
+    
+              
+    <ion-list>
+      <ion-item *ngFor="let item of itemList" (click)="viewItem(item)">
+        <h2> {{ item.itemName }} </h2>
+        <div text-wrap>{{item | json}}</div>
+        <div text-wrap>key ===== {{item.$key}}</div>
+      </ion-item>
+    </ion-list>
+   
+
+</ion-content>
+<ion-footer>
+   
+      <ion-title>  <button ion-button full (click)="navigateToItemList()">
+        <ion-icon name="eye"> View Item</ion-icon>
+      </button></ion-title>
+   
+  </ion-footer>

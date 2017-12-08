@@ -1,0 +1,54 @@
+<!-- code for Add resources into an database -->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Item </ion-title>
+  </ion-navbar>
+
+</ion-header>
+  
+
+<ion-content padding>
+<ion-item>
+    <ion-label floating>Item Name  </ion-label>
+      <ion-input type="text" [(ngModel)] = "items.itemName">
+
+      </ion-input>
+
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Status </ion-label>
+        <ion-input type="text" [(ngModel)] = "items.itemStatus"></ion-input>
+     
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col width-50>
+          <button ion-button color="danger" type="button" full round large (click)="takePhoto()">
+                      <ion-icon name="md-camera"></ion-icon>
+                  </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button color="secondary" type="button" full round large (click)="selectPhoto()">
+                      <ion-icon name="md-image"></ion-icon>
+                  </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <img class="img-responsive" src="{{ myPhotoURL }}" />
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Enter E-mail </ion-label>
+        <ion-input type="text" [(ngModel)] = "items.itemOwner">
+  
+        </ion-input>
+  
+    </ion-item>
+
+
+    <button ion-button block (click) ="addItems(items)">Add Item</button>
+
+</ion-content>

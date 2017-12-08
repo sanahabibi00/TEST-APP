@@ -1,0 +1,11 @@
+page-item {
+    @font-face {
+        font-family: 'Times New Roman', Times, serif;
+        src: url("../assets/fonts/Quicksand-Regular.ttf");
+        }
+        
+        body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title {
+        font-family: ''Times New Roman', Times, serif' !important;
+        }
+
+}

@@ -1,0 +1,8 @@
+{
+  "name": "CrudApp",
+  "app_id": "fecb51ff",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

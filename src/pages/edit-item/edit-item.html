@@ -1,0 +1,30 @@
+<!-- code for Edit item -->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{item.itemName}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div text-wrap>{{item | json}}</div>
+    <div text-wrap>key {{item.$key}}</div>
+    <ion-item>
+        <ion-label floating>Item Name  </ion-label>
+          <ion-input type="text" [(ngModel)] = "item.itemName">
+    
+          </ion-input>
+    
+      </ion-item>
+    
+      <ion-item>
+          <ion-label floating>Status </ion-label>
+            <ion-input type="text" [(ngModel)] = "item.itemStatus"></ion-input>
+         
+        </ion-item>
+        <button ion-button block (click) ="editItems(item)"> Edit Done</button>
+    
+
+</ion-content>
