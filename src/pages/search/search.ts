@@ -41,7 +41,6 @@ export class SearchPage {
 
   }
   viewItem(items: Items) {
-    console.log("1 " + JSON.stringify(items,null,4));
     this.actionsheetctrl.create({
       title: `${items.itemName}`,
       buttons: [
