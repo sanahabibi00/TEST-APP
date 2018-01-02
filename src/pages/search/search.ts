@@ -48,7 +48,7 @@ export class SearchPage {
         {
           text: 'View',
           handler: () => {
-    console.log("2 " + JSON.stringify(items,null,4));
+ 
     
             this.navCtrl.push(ViewItemPage, { ItemsId: items.$key });
           }
