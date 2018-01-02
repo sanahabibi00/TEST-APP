@@ -29,7 +29,6 @@ export class SearchPage {
     this.itemRef.on('value', itemList => {
       let items = [];
       itemList.forEach(item => {
-      console.log(item.val());
       items.push(item.val());
         return false;
       });
