@@ -16,6 +16,7 @@
     "@angular/compiler": "4.4.4",
     "@angular/compiler-cli": "4.4.4",
     "@angular/core": "4.4.4",
+    "@angular/fire": "^7.4.1",
     "@angular/forms": "4.4.4",
     "@angular/http": "4.4.4",
     "@angular/platform-browser": "4.4.4",
@@ -44,7 +45,7 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.0.1",
+    "@ionic/app-scripts": "^3.2.4",
     "typescript": "2.3.4"
   },
   "description": "An Ionic project",

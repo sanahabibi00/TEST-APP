@@ -5,7 +5,7 @@
     <ion-title>Items List</ion-title>
     <ion-buttons end>
       <button ion-button md="md-add" (click)="navigateToAdditemsPage()">
-        <ion-icon name="add"> </ion-icon>
+      Add Item  <ion-icon name="add"> </ion-icon>
         </button>
     </ion-buttons>
   </ion-navbar>
@@ -14,13 +14,17 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of  itemListRef$ | async " (click)="selectItem(item)">
+  <ion-list *ngIf="List.length > 0">
+    <ion-item *ngFor="let item of List" (click)="selectItem(item)">
+   
      <h2> <b>Item Name:</b> {{item.itemName}}</h2>
      <h3> <b>Status:</b> {{item.itemStatus}}</h3>
-     <p>{{item | json}}</p>
-
+ 
     </ion-item>
+  </ion-list>
+  <ion-list *ngIf="List.length == 0 ">
+    <h1> <b>{{'No Data Found'}}</b> </h1>
+
   </ion-list>
 
 </ion-content>

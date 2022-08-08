@@ -4,7 +4,6 @@ import { IonicPage, NavController, NavParams, LoadingController,
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
-import {HomePage}from'../home/home';
 
 import {SearchPage} from '../search/search';
 /**
@@ -13,12 +12,11 @@ import {SearchPage} from '../search/search';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
-export class Signup {
+export class SignupPage {
 
     public signupForm;
     loading: any;
@@ -32,7 +30,7 @@ export class Signup {
             email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
             password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
             number:['', ],
-            name:['', ]
+            displayName:['', ]
         });
     
         }
@@ -45,7 +43,7 @@ export class Signup {
      */
     signupUser() {
         var account = {
-            Name:this.signupForm.value.name,
+            displayName:this.signupForm.value.displayName,
             email:this.signupForm.value.email,
             phone:this.signupForm.value.number,
             password:this.signupForm.value.password

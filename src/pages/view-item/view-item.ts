@@ -22,16 +22,25 @@ export class ViewItemPage {
   itemSubscription: Subscription;
   itemRef$: FirebaseObjectObservable<Items>;
   item = {} as Items;
+  itemName: string;
+  itemStatus: string;
+  itemImage: any;
+  itemOwner: string;
 constructor(public navCtrl: NavController, public navParams: NavParams,
 private database: AngularFireDatabase
 ) {
-
+   debugger
   const ItemsId = this.navParams.get('ItemsId');
   console.log(ItemsId);
 this.itemRef$ = this.database.object(`item/${ItemsId}`);
 
 this.itemSubscription = this.itemRef$.subscribe(
 item => this.item = item);
+console.log("viewItem",this.item)
+this.itemName = this.item.itemName;
+this.itemStatus = this.item.itemStatus;
+this.itemImage = this.item.itemImage;
+this.itemOwner = this.item.itemOwner;
 }
 
 

@@ -15,7 +15,7 @@ export class EditItemPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private database: AngularFireDatabase
   ) {
-
+    debugger
     const ItemsId = this.navParams.get('ItemsId');
     console.log(ItemsId);
 this.itemRef$ = this.database.object(`item/${ItemsId}`);
@@ -24,11 +24,13 @@ this.itemSubscription = this.itemRef$.subscribe(
   item => this.item = item);
 }
 editItems(item: Items){
+  debugger
 this.itemRef$.update(item);
 this.navCtrl.pop();
 }
   
 ionViewWillLeave(){
+  debugger
   this.itemSubscription.unsubscribe();
 }
 

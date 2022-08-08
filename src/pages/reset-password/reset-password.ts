@@ -13,12 +13,11 @@ import { EmailValidator } from '../../validators/email';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-reset-password',
   templateUrl: 'reset-password.html',
 })
-export class ResetPassword {
+export class ResetPasswordPage {
     public resetPasswordForm;
 
 

@@ -32,15 +32,18 @@ export class MyApp {
         };
         
         firebase.initializeApp(config);
+        let firestore = firebase.firestore();
         firebase.auth().onAuthStateChanged((user) => {
           
                     if (!user) {
+                      console.log("loginnn",user)
                         console.log("not login");
-                        this.rootPage = SearchPage;
+                        this.rootPage = HomePage;
           
           
                     } else {
                         console.log("login");
+                        console.log("loginnn",user)
                         this.rootPage = SearchPage;
           
                     }
@@ -68,6 +71,9 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+  ngOnInit(){
+  
   }
   }
 

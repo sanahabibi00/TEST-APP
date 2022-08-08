@@ -18,9 +18,10 @@
     
     ></ion-searchbar>
     
-              
+   
     <ion-list>
-      <ion-item *ngFor="let item of itemList" (click)="viewItem(item)">
+      <ion-item *ngFor="let item of  itemListRef$ | async " (click)="viewItem(item)">
+        <p>{{ itemRef }}</p> 
         <h2> {{ item.itemName }} </h2>
       </ion-item>
     </ion-list>
@@ -30,7 +31,7 @@
 <ion-footer>
    
       <ion-title>  <button ion-button full (click)="navigateToItemList()">
-        <ion-icon name="eye"> View Item</ion-icon>
+        <ion-icon name="eye"> My Items</ion-icon>
       </button></ion-title>
    
   </ion-footer>
